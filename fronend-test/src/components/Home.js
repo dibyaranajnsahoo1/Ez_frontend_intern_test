@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import ez from "../assets/EZ Works Blue@2x.png";
 import presentation from "../assets/Research@4x@2x.png";
-
+import audio from "../assets/Research@4x@2x2.png";
+import Translation from "../assets/Research@4x4.png";
+import Graphic  from "../assets/Research@4x.png";
+import Research from "../assets/Research@4x3.png";
+import data from "../assets/data.png";
 
 
 import "../Styles/Home.css"
-
-
-
 
 const MainPage = () => {
 
@@ -35,7 +36,7 @@ const MainPage = () => {
         }
       
         try {
-          const response = await fetch("http://3.228.97.110:9000/api", {
+          const response = await fetch("https://test.ezworks.ai/api ", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -76,7 +77,7 @@ const MainPage = () => {
                  <div className="nd">
                         <div className="presentation">
                             <div className="presentation-div">
-                                 <img className="presentation-img" alt="as" src={presentation}/>
+                                 <img className="presentation-img" alt="presentation" src={presentation}/>
                                  <h1 className="presentation-heading">Presentation Design</h1>
                             </div>
                             <p  className="presentation-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
@@ -84,7 +85,7 @@ const MainPage = () => {
                         </div>
                         <div className="audio">
                             <div className="audio-div">
-                                 <img className="audio-img" alt="as" src={presentation}/>
+                                 <img className="audio-img" alt="audio" src={audio}/>
                                  <h1 className="audio-heading">Audio - Visual Production</h1>
                             </div>
                             <p  className="audio-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
@@ -92,7 +93,7 @@ const MainPage = () => {
                         </div>
                         <div className="Translation">
                             <div className="Translation-div">
-                                 <img className="Translation-img" alt="as" src={presentation}/>
+                                 <img className="Translation-img" alt="Translation" src={Translation}/>
                                  <h1 className="Translation-heading">Translation Services</h1>
                             </div>
                             <p  className="Translation-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
@@ -100,21 +101,21 @@ const MainPage = () => {
                         </div>
                         <div className="Graphic">
                             <div className="Graphic-div">
-                                 <img className="Graphic-img" alt="as" src={presentation}/>
+                                 <img className="Graphic-img" alt="Graphic" src={Graphic}/>
                                  <h1 className="Graphic-heading">Graphic Design</h1>
                             </div>
                             <p  className="Graphic-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
                         </div>
                         <div className="Research">
                             <div className="Research-div">
-                                 <img className="Research-img" alt="as" src={presentation}/>
+                                 <img className="Research-img" alt="Research" src={Research}/>
                                  <h1 className="Research-heading">Research & Analytics</h1>
                             </div>
                             <p  className="Research-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
                         </div>
                         <div className="Data">
                             <div className="Data-div">
-                                 <img className="Data-img" alt="as" src={presentation}/>
+                                 <img className="Data-img" alt="data" src={data}/>
                                  <h1 className="Data-heading">Data Processing</h1>
                             </div>
                             <p  className="Data-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
