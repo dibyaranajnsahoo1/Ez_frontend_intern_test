@@ -49,7 +49,7 @@ const MainPage = () => {
       
           if (response.status === 200) {
             setMessage("Form Submitted");
-            setEmail(""); // Clear input field
+            setEmail(""); 
           } else if (response.status === 422) {
             setError("Emails ending with @ez.works are not allowed.");
           } else {

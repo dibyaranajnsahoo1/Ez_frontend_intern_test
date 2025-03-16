@@ -217,8 +217,10 @@ opacity: 1;
     font-weight: normal;    
     letter-spacing: 0px;
     color: #ABABAB;
+   
   
 }
+    
 .input::placeholder {
      padding-left: 20px;
      color: #ABABAB;
