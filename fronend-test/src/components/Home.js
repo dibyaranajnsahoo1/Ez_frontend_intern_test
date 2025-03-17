@@ -36,7 +36,7 @@ const MainPage = () => {
         }
       
         try {
-          const response = await fetch("https://test.ezworks.ai/api ", {
+          const response = await fetch("https://test.ezworks.ai/api", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -62,66 +62,69 @@ const MainPage = () => {
       };
       
 
-
-
-
     return (
 
-        <div> 
-            <div className="main-page">
+        <div className="main-page"> 
+        <div className="main">
+            <div className="page">
                 <div className="st" >
                         <img className="Main-Logo" alt="Logo" src={ez} />
                         <h1 className="main-heading">Suite Of Business Support Services</h1>
                         <p className="main-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
                  </div>
                  <div className="nd">
-                        <div className="presentation">
-                            <div className="presentation-div">
-                                 <img className="presentation-img" alt="presentation" src={presentation}/>
-                                 <h1 className="presentation-heading">Presentation Design</h1>
+                        <div className="ser">
+                            <div className="msg-div">
+                                 <img className="icon-img" alt="presentation" src={presentation}/>
+                                 <h1 className="icon-heading">Presentation Design</h1>
                             </div>
-                            <p  className="presentation-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+                            <p  className="icon-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
 
                         </div>
-                        <div className="audio">
-                            <div className="audio-div">
-                                 <img className="audio-img" alt="audio" src={audio}/>
-                                 <h1 className="audio-heading">Audio - Visual Production</h1>
+                        <div className="ser">
+                            <div className="msg-div">
+                                 <img className="icon-img" alt="audio" src={audio}/>
+                                 <h1 className="icon-heading">Audio - Visual Production</h1>
                             </div>
-                            <p  className="audio-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+                            <p  className="icon-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
 
                         </div>
-                        <div className="Translation">
-                            <div className="Translation-div">
-                                 <img className="Translation-img" alt="Translation" src={Translation}/>
-                                 <h1 className="Translation-heading">Translation Services</h1>
+                        <div className="ser">
+                            <div className="msg-div">
+                                 <img className="icon-img" alt="Translation" src={Translation}/>
+                                 <h1 className="icon-heading">Translation Services</h1>
                             </div>
-                            <p  className="Translation-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+                            <p  className="icon-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
 
                         </div>
-                        <div className="Graphic">
-                            <div className="Graphic-div">
-                                 <img className="Graphic-img" alt="Graphic" src={Graphic}/>
-                                 <h1 className="Graphic-heading">Graphic Design</h1>
+                        <div className="ser">
+                            <div className="msg-div">
+                                 <img className="icon-img" alt="Graphic" src={Graphic}/>
+                                 <h1 className="icon-heading">Graphic Design</h1>
                             </div>
-                            <p  className="Graphic-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+                            <p  className="icon-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
                         </div>
-                        <div className="Research">
-                            <div className="Research-div">
-                                 <img className="Research-img" alt="Research" src={Research}/>
-                                 <h1 className="Research-heading">Research & Analytics</h1>
+                        <div className="ser">
+                            <div className="msg-div">
+                                 <img className="icon-img" alt="Research" src={Research}/>
+                                 <h1 className="icon-heading">Research & Analytics</h1>
                             </div>
-                            <p  className="Research-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+                            <p  className="icon-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
                         </div>
-                        <div className="Data">
-                            <div className="Data-div">
-                                 <img className="Data-img" alt="data" src={data}/>
-                                 <h1 className="Data-heading">Data Processing</h1>
+                        <div className="ser">
+                            <div className="msg-div">
+                                 <img className="icon-img" alt="data" src={data}/>
+                                 <h1 className="icon-heading">Data Processing</h1>
                             </div>
-                            <p  className="Data-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+                            <p  className="icon-para">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
                         </div>
-                        <div>
-                            <form onSubmit={handleSubmit}>
+                      
+                        
+                </div>    
+                 
+            </div>
+             <div className="inp">
+                       <form onSubmit={handleSubmit}>
                                     <input className="input"
                                     type="email"
                                     value={email}
@@ -131,11 +134,8 @@ const MainPage = () => {
                                     {error && <p className="error">{error}</p>}
                                     {message && <p className="success">{message}</p>}
                             </form>
-                        </div>
-                        
-                </div>        
-            </div>
-           
+                </div>  
+                </div>
          </div>
     );
 };
