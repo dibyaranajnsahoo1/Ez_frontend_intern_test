@@ -11,55 +11,60 @@ import data from "../assets/data.png";
 import "../Styles/Home.css"
 
 const MainPage = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // New state for loading
 
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const [error, setError] = useState("");
-  
-    const validateEmail = (email) => {
+  const validateEmail = (email) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
-    };
-  
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setMessage("");
-        setError("");
-      
-        if (!email) {
+  };
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      setMessage("");
+      setError("");
+
+      if (!email) {
           setError("Email is required.");
           return;
-        }
-        if (!validateEmail(email)) {
+      }
+      if (!validateEmail(email)) {
           setError("Invalid email format.");
           return;
-        }
-      
-        try {
+      }
+
+      setLoading(true); // Start loading
+
+      try {
           const response = await fetch("https://test.ezworks.ai/api", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email }),
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
           });
-      
+
           const data = await response.json();
           console.log("API Response:", data);
-      
+
           if (response.status === 200) {
-            setMessage("Form Submitted");
-            setEmail(""); 
+              setMessage("Form Submitted");
+              setEmail("");
           } else if (response.status === 422) {
-            setError("Emails ending with @ez.works are not allowed.");
+              setError("Emails ending with @ez.works are not allowed.");
           } else {
-            setError("Something went wrong. Please try again.");
+              setError("Something went wrong. Please try again.");
           }
-        } catch (err) {
+      } catch (err) {
           console.error("Network Error:", err);
           setError("Network error. Please try again later.");
-        }
-      };
+      }
+
+      setLoading(false); // Stop loading
+  };
+
       
 
     return (
@@ -130,10 +135,12 @@ const MainPage = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Email Address"/>
-                                    <button className="btn" type="submit">Contact Me</button>
+                                   <button className="btn" type="submit" disabled={loading}>
+                                        {loading ? "..." : "Contact Me"} {/* Show '...' when loading */}
+                                   </button>
                                     {error && <p className="error">{error}</p>}
                                     {message && <p className="success">{message}</p>}
-                            </form>
+                          </form>
                 </div>  
                 </div>
          </div>
